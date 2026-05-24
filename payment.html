@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Payment — Credit Guru</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --top:#2196f3;
+  --btn:#1672ff;
+  --muted:#6b7280;
+  --success:#18b46b;
+}
+*{box-sizing:border-box; overflow: auto !important;}
+body{margin:0;font-family:'Baloo 2',Arial,Helvetica,sans-serif;background:#f3f7ff;color:#111}
+.topbar{background:var(--top);color:#fff;padding:14px 0;text-align:center;font-weight:800;font-size:20px;position:sticky;top:0}
+.container{max-width:420px;margin:18px auto;padding:14px}
+.card{background:#fff;border-radius:12px;padding:16px;box-shadow:0 8px 24px rgba(16,24,40,0.06)}
+.small{color:var(--muted);font-weight:700}
+.timer{float:right;background:#eaf5ff;padding:6px 10px;border-radius:10px;color:var(--btn);font-weight:800}
+.amount{font-size:20px;font-weight:800;margin-top:8px}
+.label{margin-top:14px;font-weight:700;color:#1f2937}
+.upi-row{display:flex;gap:8px;margin-top:8px;align-items:center}
+.upi-input{flex:1;padding:12px;border-radius:8px;border:1px solid #e6e9f0;font-weight:700}
+.copy-btn{background:#fff;border:2px solid var(--btn);color:var(--btn);padding:10px 12px;border-radius:8px;font-weight:800;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px}
+.app{border:1px solid #eef6ff;border-radius:12px;padding:12px;text-align:center;height:64px;display:flex;align-items:center;justify-content:center}
+.utr{margin-top:18px}
+.input-utr{width:100%;padding:12px;border-radius:10px;border:1px solid #e6e9f0;font-size:16px}
+.submit-btn{width:100%;margin-top:16px;background:var(--btn);color:#fff;padding:14px;border-radius:30px;border:none;font-weight:800;font-size:16px;cursor:pointer}
+.notice{margin-top:14px;color:#c62828;font-weight:700;font-size:14px}
+.logos{display:flex;gap:8px;justify-content:center;margin-top:18px}
+.logos img{height:30px;object-fit:contain}
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.45);visibility:hidden;opacity:0;transition:all .18s}
+.modal.show{visibility:visible;opacity:1}
+.modal-card{background:#fff;padding:22px;border-radius:12px;min-width:260px;text-align:center;transform:scale(.95);transition:transform .25s}
+.modal.show .modal-card{transform:scale(1)}
+.check{width:88px;height:88px;border-radius:50%;display:inline-grid;place-items:center;margin:0 auto 10px;background:linear-gradient(135deg,#43e97b,#38f9d7);box-shadow:0 8px 18px rgba(16,24,40,0.12)}
+.check svg{width:44px;height:44px;stroke:#fff;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.modal h3{margin:6px 0}
+.ok{margin-top:12px;padding:8px 14px;border-radius:8px;border:none;background:var(--success);color:#fff;font-weight:700;cursor:pointer}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:28px;background:#0f1724;color:#fff;padding:10px 14px;border-radius:8px;opacity:0;transition:opacity .18s}
+.toast.show{opacity:1}
+@media(max-width:420px){.card{padding:14px}.app{height:56px}}
+</style>
+</head>
+<body>
+  <div class="topbar">Payment</div>
+  <div class="container">
+    <div class="card" role="region" aria-label="Payment card">
+      <div style="overflow:hidden">
+        <div style="float:left;font-weight:800;color:#111">Order will be closed in:</div>
+        <div class="timer" id="timer">2 : 31</div>
+      </div>
+
+      <div class="label">Amount</div>
+      <div class="amount">₹ <span id="amounts"></span></div>
+
+      <div class="label">VPA / UPI</div>
+      <div class="upi-row">
+        <input id="upi" class="upi-input" value="mrroy9366-1@okicici" aria-label="UPI ID" readonly />
+        <button class="copy-btn" id="copyBtn" onclick="copyValue()">COPY</button>
+      </div>
+
+      <a style="display:block;margin-top:10px;color:#1672ff;text-decoration:none;font-weight:700">➤ How to transfer money</a>
+
+      <div class="grid" aria-hidden>
+        <div class="app"><img src="phonepe.jpg" alt="PhonePe"><img src="paytm.jpg" alt="Paytm"><img src="gpay.png" alt="GPay"><img src="upi.png" alt="UPI"></div>
+        <div class="app"><img src="paytm.jpg" alt="Paytm" style="height:36px; "></div>
+        <div class="app"><img src="gpay.png" alt="GPay" style="height:36px; "></div>
+        <div class="app"><img src="upi.png" alt="UPI" style="height:36px; "></div>
+      </div>
+
+      <div style="margin-top:14px;font-weight:700;color:#0b3b82">↓ Fill the UTR number after payment</div>
+
+      <div class="utr">
+        <input id="utr" class="input-utr" maxlength="12" inputmode="numeric" placeholder="Input UTR number" aria-label="UTR number" />
+      </div>
+
+      <button id="submitBtn" class="submit-btn" aria-label="Submit UTR" onclick="submitBtn()">Submit UTR</button>
+
+      <div class="notice">
+        1. One UPI can only transfer money once.<br>
+        2. Don't change the payment amount.<br>
+        3. Don't pay from @icici or money may be lost.
+      </div>
+
+      <div class="logos" aria-hidden>
+        <img src="https://i.imgur.com/7YkQm0p.png" alt="">
+        <img src="https://i.imgur.com/8R0g3QG.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card" role="document">
+      <div class="check" aria-hidden>
+        <svg viewBox="0 0 52 52"><polyline points="14,27 22,34 38,16" /></svg>
+      </div>
+      <h3 style="margin:0">Payment Submitted</h3>
+      <p style="color:#6b7280;margin:6px 0 0">UTR submitted successfully. Thank you!</p>
+      <button class="ok" id="okBtn" onclick="okButton()">OK</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js">
+// // timer
+// (function(){
+//   var total = 2*60 + 31;
+//   var el = document.getElementById('timer');
+//   function tick(){
+//     if(total <= 0){ el.textContent = '0 : 00'; return; }
+//     var m = Math.floor(total/60), s = total % 60;
+//     el.textContent = m + ' : ' + (s<10? '0'+s : s);
+//     total--; setTimeout(tick,1000);
+//   }
+//   tick();
+// })();
+
+// // copy UPI
+// document.getElementById('copyBtn').addEventListener('click', function(){
+//   var upi = document.getElementById('upi').value;
+//   if(navigator.clipboard && navigator.clipboard.writeText){
+//     navigator.clipboard.writeText(upi).then(function(){
+//       showToast('UPI copied to clipboard');
+//     }, function(){ fallbackCopy(upi); });
+//   } else fallbackCopy(upi);
+// });
+// function fallbackCopy(text){
+//   var t = document.createElement('textarea'); t.value = text; document.body.appendChild(t);
+//   t.select();
+//   try{ document.execCommand('copy'); showToast('UPI copied to clipboard'); } catch(e){ alert('Copy failed — copy manually'); }
+//   document.body.removeChild(t);
+// }
+// function showToast(msg){
+//   var t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show');
+//   t.style.opacity = '1';
+//   setTimeout(function(){ t.style.opacity = '0'; },1600);
+// }
+
+// // submit UTR
+// document.getElementById('submitBtn').addEventListener('click', function(){
+//   var v = document.getElementById('utr').value.trim();
+//   if(!/^\d{12}$/.test(v)){ alert('Enter valid 12 digit UTR number'); return; }
+//   // show success modal with animation
+//   var modal = document.getElementById('modal');
+//   modal.classList.add('show'); modal.setAttribute('aria-hidden','false');
+// });
+
+// // ok button
+// document.getElementById('okBtn').addEventListener('click', function(){
+//   var modal = document.getElementById('modal');
+//   modal.classList.remove('show'); modal.setAttribute('aria-hidden','true');
+//   // redirect back to index
+//   window.location.href = 'index.html';
+// });
+</script>
+</body>
+</html>

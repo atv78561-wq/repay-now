@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Repay — Credit Guru</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --topbar:#ff6565;
+  --accent:#3626d9;
+  --danger:#ff3b5c;
+  --muted:#6b7280;
+  --card:#ffffff;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Baloo 2',Arial,Helvetica,sans-serif;background:#fafafa;color:#111}
+.topbar{background:var(--topbar);color:#fff;padding:14px 0;text-align:center;font-weight:800;font-size:20px;position:sticky;top:0;z-index:5}
+.container{max-width:420px;margin:18px auto;padding:14px}
+.card{background:var(--card);border-radius:14px;padding:18px;box-shadow:0 8px 24px rgba(16,24,40,0.06)}
+.header{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+.logo{width:56px;height:56px;border-radius:12px;background:#ffeef3;display:flex;align-items:center;justify-content:center}
+.logo img{width:44px;height:44px}
+.provider{font-size:20px;font-weight:800;color:#0f1724}
+.rows{margin-top:10px}
+.row{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid #f3f4f6}
+.row .label{color:var(--muted);font-size:15px}
+.row .value{font-weight:700;color:#111}
+.row .value.danger{color:var(--danger)}
+.repay-btn{display:block;width:100%;padding:16px;border-radius:40px;border:none;background:var(--accent);color:#fff;font-weight:800;font-size:18px;margin-top:16px;cursor:pointer;box-shadow:0 8px 22px rgba(54,38,217,0.18)}
+.tips{margin-top:18px;font-size:15px;color:#111}
+.tips strong{color:var(--danger);display:block;margin-bottom:6px}
+.footer{margin-top:16px;color:#9aa0a6;text-align:center;font-size:13px}
+@media(max-width:420px){
+  .container{padding:12px}
+  .row{padding:14px 0}
+}
+</style>
+</head>
+<body>
+  <div class="topbar">Repay</div>
+  <div class="container">
+    <div class="card" role="region" aria-label="Repay card">
+      <div class="header">
+        <div class="logo" aria-hidden>
+          <img src="https://cdn-icons-png.flaticon.com/512/891/891462.png" alt="">
+        </div>
+        <div class="provider" id="companyName"></div>
+      </div>
+
+      <div class="rows">
+        <div class="row"><div class="label">Name</div><div class="value"> Customer1</div></div>
+        <div class="row"><div class="label">Loan Amount</div><div class="value">₹ <span id="amounts"></span></div></div>
+        <div class="row"><div class="label">Renewal Day</div><div class="value">7 Day</div></div>
+        <div class="row"><div class="label">Renewal Fee</div><div class="value">₹000</div></div>
+        <div class="row"><div class="label">Repayment Amount</div><div class="value danger">₹ 000</div></div>
+      </div>
+
+      <button class="repay-btn" id="repayNow" aria-label="Repay Now" onclick="pageChange()">Repay Now</button>
+
+      <div class="tips" aria-hidden>
+        <strong>!!! One UPI can only transfer money ONCE.</strong>
+        <strong>!!! DO NOT CHANGE the payment AMOUNT & UPI.</strong>
+        <strong>!!! DO NOT transfer money in the UPI friend CHAT window again.</strong>
+      </div>
+
+      <div class="footer">After successful repayment, you can immediately apply for a loan again.</div>
+    </div>
+  </div>
+
+<script src="script.js">
+
+</script>
+</body>
+</html>
