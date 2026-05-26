@@ -2,7 +2,7 @@
 
 const companyData = {
     companyName: "Credit guro",
-    amount: "40,000",
+    amount: "4,000",
     accountNumber: "govindsumon956-1@okicici"
 };
 
