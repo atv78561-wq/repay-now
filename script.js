@@ -118,6 +118,8 @@ function company(name) {
         name.companyName;
     document.getElementById("amounts").innerText =
         name.amount;
+    document.getElementById("customerName").innerText =
+        name.customerName;
     } else{
             document.getElementById("amounts").innerText =
         name.amount;
