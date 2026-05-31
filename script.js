@@ -2,7 +2,7 @@
 
 const companyData = {
     companyName: "Mb loan",
-    amount: "4,500",
+    amount: "0000",
     accountNumber: "apandas9402-3@okicici",
     customerName: "AMMU NARAYANA ASHITOSH"
 };
