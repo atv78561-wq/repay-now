@@ -4,7 +4,7 @@ const companyData = {
     companyName: "SB LOAN",
     amount: "10,500",
     accountNumber: "pritamsarkar7893@okaxis",
-    customerName: "Customer1"
+    customerName: "shraddha"
 };
 
 
