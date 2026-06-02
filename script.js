@@ -1,10 +1,10 @@
 
 
 const companyData = {
-    companyName: "SB LOAN",
-    amount: "10,500",
+    companyName: "Tap money",
+    amount: "3,500",
     accountNumber: "pritamsarkar7893@okaxis",
-    customerName: "shraddha"
+    customerName: "Sre hari velur"
 };
 
 
