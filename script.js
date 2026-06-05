@@ -1,10 +1,10 @@
 
 
 const companyData = {
-    companyName: "Happy wallet",
-    amount: "4,500",
-    accountNumber: "rajibrakhi144-3@okaxis",
-    customerName: "SHAMBULING MAHANTASHETTAR"
+    companyName: "SB Loan",
+    amount: "8,100",
+    accountNumber: "rimondatta75@okicici",
+    customerName: "MANOJ KRISHNA"
 };
 
 
