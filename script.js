@@ -1,10 +1,10 @@
 
 
 const companyData = {
-    companyName: "Candy bay",
-    amount: "4,200",
-    accountNumber: "g-prasanjit@ptaxis",
-    customerName: "AMIT SUHAS NIKAM"
+    companyName: "Cradit goro",
+    amount: "5,000",
+    accountNumber: "sarkarsandip55153-4@okicici",
+    customerName: "Customer1"
 };
 
 
