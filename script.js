@@ -1,8 +1,8 @@
 
 
 const companyData = {
-    companyName: "Happy park",
-    amount: "4,500",
+    companyName: "Tap money",
+    amount: "5,400",
     accountNumber: "sakil.hossen@ptyes",
     customerName: "NAGAMUTHU KUPPAN"
 };
