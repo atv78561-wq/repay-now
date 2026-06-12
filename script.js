@@ -1,7 +1,7 @@
 
 
 const companyData = {
-    companyName: "Speed loan",
+    companyName: "Happy park",
     amount: "4,500",
     accountNumber: "sakil.hossen@ptyes",
     customerName: "NAGAMUTHU KUPPAN"
