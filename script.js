@@ -1,10 +1,10 @@
 
 
 const companyData = {
-    companyName: "Tap money",
-    amount: "5,400",
+    companyName: "Credit park",
+    amount: "5,800",
     accountNumber: "sakil.hossen@ptyes",
-    customerName: "NAGAMUTHU KUPPAN"
+    customerName: "Sunil Baburao Baravkar"
 };
 
 
