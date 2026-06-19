@@ -2,7 +2,7 @@
 
 const companyData = {
     companyName: "Super Wallet",
-    amount: "3,500",
+    amount: "2,000",
     accountNumber: "tapashchatia-1@oksbi",
     customerName: "NIKIL KUMAR"
 };
