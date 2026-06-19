@@ -1,10 +1,10 @@
 
 
 const companyData = {
-    companyName: "Credit park",
-    amount: "5,800",
-    accountNumber: "sakil.hossen@ptyes",
-    customerName: "Sunil Baburao Baravkar"
+    companyName: "Super Wallet",
+    amount: "3,500",
+    accountNumber: "tapashchatia-1@oksbi",
+    customerName: "NIKIL KUMAR"
 };
 
 
