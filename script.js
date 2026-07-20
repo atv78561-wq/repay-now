@@ -1,10 +1,10 @@
 
 
 const companyData = {
-    companyName: "Prime loan",
-    amount: "10,500",
-    accountNumber: "rimondatta75@okicici",
-    customerName: "Customer1"
+    companyName: "Credit guru",
+    amount: "5,000",
+    accountNumber: "deba97206-2@okhdfcbank",
+    customerName: "Sure Akhil"
 };
 
 
