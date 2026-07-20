@@ -1,7 +1,7 @@
 
 
 const companyData = {
-    companyName: "Super Wallet",
+    companyName: "Prime loan",
     amount: "10,500",
     accountNumber: "rimondatta75@okicici",
     customerName: "Customer1"
