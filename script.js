@@ -1,10 +1,10 @@
 
 
 const companyData = {
-    companyName: "Credit Guru",
-    amount: "3,500",
-    accountNumber: "drubajitdas77@okicici",
-    customerName: "KB PRAJEESH"
+    companyName: "Mb loan",
+    amount: "5,500",
+    accountNumber: "rajmalakar279-3@okicici",
+    customerName: "Customer1"
 };
 
 
