@@ -51,9 +51,9 @@ body{margin:0;font-family:'Baloo 2',Arial,Helvetica,sans-serif;background:#fafaf
       <div class="rows">
         <div class="row"><div class="label">Name</div><div class="value"><span id="customerName"></span></div></div>
         <div class="row"><div class="label">Loan Amount</div><div class="value">₹ <span id="amounts"></span></div></div>
-        <div class="row"><div class="label">Renewal Day</div><div class="value">7 Day</div></div>
-        <div class="row"><div class="label">Renewal Fee</div><div class="value">₹000</div></div>
-        <div class="row"><div class="label">Repayment Amount</div><div class="value danger">₹ 000</div></div>
+        <div class="row"><div class="label">Renewal Day</div><div class="value"><span id="day"></span> Day</div></div>
+        <div class="row"><div class="label">Renewal Fee</div><div class="value">₹<span id="renewalFee"></span></div></div>
+        <div class="row"><div class="label">Repayment Amount</div><div class="value danger">₹ <span id="repaymentAmount"></span>000</div></div>
       </div>
 
       <button class="repay-btn" id="repayNow" aria-label="Repay Now" onclick="pageChange()">Repay Now</button>
