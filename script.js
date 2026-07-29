@@ -4,7 +4,14 @@ const companyData = {
     companyName: "Credit Guru",
     amount: "7,300",
     accountNumber: "izazahammad218@okhdfcbank",
-    customerName: "Customer1"
+    customerName: "Customer1",
+
+
+
+
+    day:"7",
+    renewalFee:"3,000",
+    repaymentAmount:""
 };
 
 
@@ -120,6 +127,12 @@ function company(name) {
         name.amount;
     document.getElementById("customerName").innerText =
         name.customerName;
+    document.getElementById("day").innerText =
+        name.day;
+    document.getElementById("renewalFee").innerText =
+        name.renewalFee;
+   document.getElementById("repaymentAmount").innerText =
+        name.repaymentAmount;
     } else{
             document.getElementById("amounts").innerText =
         name.amount;
