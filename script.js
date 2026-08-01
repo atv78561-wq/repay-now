@@ -1,8 +1,8 @@
 
 
 const companyData = {
-    companyName: "Credit Guru",
-    amount: "3,500",
+    companyName: "Super wallet",
+    amount: "5,500",
     accountNumber: "sheikhabbas904@okaxis",
     customerName: "Customer1",
 
