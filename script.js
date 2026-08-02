@@ -1,7 +1,7 @@
 
 
 const companyData = {
-    companyName: "Paisa home",
+    companyName: "Credit guru",
     amount: "4,500",
     accountNumber: "drubajitdas77@okicici",
     customerName: "Customer1",
