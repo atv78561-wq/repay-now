@@ -2,7 +2,7 @@
 
 const companyData = {
     companyName: "Prime loan",
-    amount: "4,500",
+    amount: "5,000",
     accountNumber: "rdtc@ptaxis",
     customerName: "Customer1",
 
