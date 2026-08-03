@@ -1,9 +1,9 @@
 
 
 const companyData = {
-    companyName: "Hi rupee",
-    amount: "12,400",
-    accountNumber: "drubajitdas77@okicici",
+    companyName: "Prime loan",
+    amount: "4,500",
+    accountNumber: "rdtc@ptaxis",
     customerName: "Customer1",
 
 
