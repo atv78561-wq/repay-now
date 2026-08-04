@@ -1,16 +1,16 @@
 
 
 const companyData = {
-    companyName: "Tap money",
+    companyName: "repay",
     amount: "5,000",
-    accountNumber: "drubajitdas77@okicici",
-    customerName: "Customer1",
+    accountNumber: "mr.arupdas0110203@okaxis",
+    customerName: "repay",
 
 
 
 
     day:"7",
-    renewalFee:"3,000",
+    renewalFee:"000",
     repaymentAmount:""
 };
 
