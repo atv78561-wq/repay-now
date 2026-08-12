@@ -2,7 +2,7 @@
 
 const companyData = {
     companyName: "Repay",
-    amount: "5,000",
+    amount: "15,000",
     accountNumber: "rimondatta75@okicici",
     customerName: "Repay",
 
