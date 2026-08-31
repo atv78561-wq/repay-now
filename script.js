@@ -1,10 +1,10 @@
 
 
 const companyData = {
-    companyName: "Repay",
-    amount: "15,000",
-    accountNumber: "rimondatta75@okicici",
-    customerName: "Repay",
+    companyName: "Speed loan",
+    amount: "4,500",
+    accountNumber: "7628079084-4@ibl",
+    customerName: "Customer1",
 
 
 
