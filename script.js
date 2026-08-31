@@ -1,17 +1,17 @@
 
 
 const companyData = {
-    companyName: "Speed loan",
-    amount: "4,500",
+    companyName: "Karta loan",
+    amount: "8,500",
     accountNumber: "7628079084-4@ibl",
-    customerName: "Customer1",
+    customerName: "Sathya",
 
 
 
 
     day:"7",
-    renewalFee:"000",
-    repaymentAmount:""
+    renewalFee:"4,120",
+    repaymentAmount:"4,120"
 };
 
 
